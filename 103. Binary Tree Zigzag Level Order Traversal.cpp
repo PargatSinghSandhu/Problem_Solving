@@ -25,7 +25,7 @@ public:
         while(!queue.empty())
         {           
             int size = queue.size();
-            vector<int> row;
+            vector<int> row(size);
             
             for(int i=0;i<size;i++)
             {
@@ -35,20 +35,21 @@ public:
             int index = (lefttoright)? i:(size-i-1);
             row[index]= node->val;
 
-            if(node->left!=NULL)
+            if(node->left)
             {
                 queue.push(node->left);
             }
 
-                if(node->right!=NULL)
+            if(node->right)
             {
                 queue.push(node->right);
-            }
-            lefttoright = (!lefttoright);
-            row.push_back(index);
+            }           
+            
           }
 
+            lefttoright = !lefttoright;
             res.push_back(row);
+
         }
         return res;
         
