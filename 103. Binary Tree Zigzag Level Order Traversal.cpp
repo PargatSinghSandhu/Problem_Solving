@@ -16,7 +16,7 @@ public:
         vector<vector<int>> res;
         if(root==NULL)
         {
-            return res;
+            return res ;
         }
 
         queue<TreeNode*> queue;
