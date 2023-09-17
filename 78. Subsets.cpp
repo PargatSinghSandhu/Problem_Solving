@@ -12,17 +12,21 @@ public:
 
     void subset(int index, vector<int>& nums, vector<int>& sub,vector<vector<int>> &ans )
     {
+        
         if(index==nums.size())
         {
             ans.push_back(sub);
             return;
         }
-                
+        
         sub.push_back(nums[index]);
-        subset(index+1, nums, sub,ans );
+        subset(index+1, nums, sub, ans);
         sub.pop_back();
 
-        subset(index+1, nums, sub,ans );
+        subset(index+1, nums, sub, ans);
+
+                
+        
 
     }    
 
